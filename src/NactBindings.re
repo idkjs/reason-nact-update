@@ -133,7 +133,8 @@ external spawn:
     Js.nullable(string),
     actorOptions('msgType, 'parentMsg, 'state)
   ) =>
-  actorRef;
+  actorRef =
+  "spawn";
 
 [@bs.module "nact"]
 external spawnStateless:
@@ -143,7 +144,8 @@ external spawnStateless:
     Js.nullable(string),
     actorOptions('msgType, 'parentMsg, unit)
   ) =>
-  actorRef;
+  actorRef =
+  "spawnStateless";
 
 type actor;
 
@@ -161,7 +163,8 @@ external spawnPersistent:
     Js.nullable(string),
     persistentActorOptions('msgType, 'parentMsg, 'state)
   ) =>
-  actorRef;
+  actorRef =
+  "spawnPersistent";
 
 [@bs.module "nact"]
 external persistentQuery:
@@ -171,17 +174,22 @@ external persistentQuery:
     string,
     persistentQueryOptions('msgType, 'state)
   ) =>
-  persistentQuery('state);
+  persistentQuery('state) =
+  "persistentQuery";
 
 type plugin = actorRef => unit;
 
-[@bs.module "nact"] external configurePersistence: persistenceEngine => plugin;
+[@bs.module "nact"]
+external configurePersistence: persistenceEngine => plugin =
+  "configurePersistence";
 
-[@bs.module "nact"] external stop: actorRef => unit;
+[@bs.module "nact"] external stop: actorRef => unit = "stop";
 
-[@bs.module "nact"] [@bs.splice] external start: array(plugin) => actorRef;
+[@bs.module "nact"] [@bs.splice]
+external start: array(plugin) => actorRef = "start";
 
-[@bs.module "nact"] external dispatch: (actorRef, 'msgType) => unit;
+[@bs.module "nact"]
+external dispatch: (actorRef, 'msgType) => unit = "dispatch";
 
 [@bs.module "nact"]
 external dispatchWithSender:
@@ -190,4 +198,5 @@ external dispatchWithSender:
 
 [@bs.module "nact"]
 external query:
-  (actorRef, actorRef => 'msgType, int) => Js.Promise.t('expectedResult);
+  (actorRef, actorRef => 'msgType, int) => Js.Promise.t('expectedResult) =
+  "query";

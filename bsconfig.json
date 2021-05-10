@@ -1,33 +1,33 @@
 {
-	"name": "reason-nact",
-	"sources": [
-		{
-			"dir": "src"
-		},
-		{
-			"dir": "__tests__",
-			"type": "dev"
-		},
-		{
-			"dir": "resilient-services",
-			"type": "dev"
-		},
-		{
-			"dir": "examples",
-			"type": "dev"
-		}
-	],
-	"refmt": 3,
-	"suffix": ".bs.js",
+  "name": "reason-nact",
+  "sources": [
+    {
+      "dir": "src"
+    },
+    {
+      "dir": "__tests__",
+      "type": "dev"
+    },
+    {
+      "dir": "resilient-services",
+      "type": "dev"
+    },
+    {
+      "dir": "examples",
+      "type": "dev"
+    }
+  ],
 
-	"package-specs": {
-		"module": "commonjs",
-		"in-source": true
-	},
-	"bs-dependencies": [],
-	"bs-dev-dependencies": [ "@glennsl/bs-jest", "@glennsl/bs-json", "bs-express" ],
-	"bsc-flags": [ "-bs-no-version-header" ],
-	"warnings": {
-		"error": "+5+8+101"
-	}
+  "suffix": ".bs.js",
+
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "bs-dependencies": [],
+  "bs-dev-dependencies": [ "@glennsl/bs-jest", "@glennsl/bs-json", "bs-express" ],
+  "bsc-flags": [ "-bs-no-version-header" ],
+  "warnings": {
+    "error": "+5+8+101"
+  }
 }
